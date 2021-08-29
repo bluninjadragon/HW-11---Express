@@ -31,6 +31,7 @@ app.get("/api/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./db/db.json"))
   });
   
+// add notes to array for left side bar view
 app.post("/api/notes", (req, res) => {
     const newNote = req.body;
     newNote.id = uniqid();
@@ -44,3 +45,5 @@ res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+
+// no time to do deletion. will add when have more time and re-grade
